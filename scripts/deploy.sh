@@ -1,5 +1,9 @@
-
 #!/bin/bash
+set -e
+
+# Log everything to /var/log/user-data.log
+exec > /var/log/user-data.log 2>&1
+
 # Update OS
 yum update -y
 
@@ -46,4 +50,5 @@ EOF
 # Install dependencies
 npm install
 
+# Start app with nohup
 nohup node app.js > server.log 2>&1 &
