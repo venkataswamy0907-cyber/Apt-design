@@ -263,8 +263,7 @@ resource "aws_launch_template" "app_lt" {
 
   vpc_security_group_ids = [aws_security_group.ec2_sg.id]
 
- user_data = filebase64("${path.module}/../../scripts/deploy.sh")
-
+ user_data =user_data = filebase64("${path.module}/scripts/deploy.sh")
 
 }
 
